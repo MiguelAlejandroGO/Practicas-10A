@@ -32,9 +32,8 @@ self.addEventListener("install", installEvent => {
  
 // 2. Network Only
 self.addEventListener('fetch', event => { 
-  event.respondWith(networkCache.match(event.request));
+  event.respondWith(fetch(event.request));
 });
-
 
 
 
