@@ -57,7 +57,7 @@ self.addEventListener("fetch", fetchEvent => {
   
     fetchEvent.respondWith(
       fetch(fetchEvent.request).then(res => {
-        return   fetch(fetchEvent.request || res);
+        return res|| caches.match(fetchEvent.request);
       })
     );
     
